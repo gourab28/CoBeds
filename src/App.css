@@ -98,3 +98,7 @@ td > strong {
   -ms-overflow-style: none;
   scrollbar-color: transparent transparent; /*just hides the scrollbar for firefox */
 }
+.vaccine {
+  font-weight: bold;
+  text-transform: uppercase;
+}

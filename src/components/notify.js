@@ -51,7 +51,7 @@ class Updates extends Component {
     if (isLoaded) {
       return (
         <div
-          className="container fadeInUp"
+          className="home container fadeInUp"
           style={{ marginTop: "10px", marginBottom: "-7px" }}
         >
         <Helmet>
@@ -63,7 +63,7 @@ class Updates extends Component {
                 (item, index) =>
                   Number(item.deltaconfirmed) > 0 && (
                     <div
-                      className="alert hoveralert fadeInUp"
+                      className="home alert hoveralert fadeInUp"
                       role="alert"
                       style={{
                         marginBottom: "5px",
@@ -118,7 +118,7 @@ class Updates extends Component {
               )
             ) : (
               <div
-                className="alert hoveralert"
+                className="home alert hoveralert"
                 role="alert"
                 style={{
                   marginBottom: "5px",

@@ -4,7 +4,6 @@ import {
   Route,
   Switch,
 } from "react-router-dom";
-
 import Home from './components/home';
 import Navbar from './components/navbar'
 import Menu from './components/menu'
