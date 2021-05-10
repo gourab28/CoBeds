@@ -1,6 +1,9 @@
 import React, {useState, useEffect} from 'react';
 import axios from 'axios';
 import {Table} from 'react-bootstrap';
+import { Link } from 'react-router-dom';
+
+
 function FAQ(props) {
   const [district, setDistrict] = useState([]);
   const [isLoaded, setIsLoaded] = useState(false);
@@ -50,7 +53,9 @@ function FAQ(props) {
             </td>
             <td>
              <h3>
-               <span class="badge bg-success">Available</span>
+             <Link to={`../vaccine/wb/${item.district_id}`}>
+               <span class="badge bg-success">Click</span>
+               </Link>
                </h3>
             </td>
           </tr>

@@ -11,7 +11,7 @@ import District from './components/district';
 import Search from './components/list';
 import Pincode from './components/pin';
 import Notification from './components/notify';
-
+import VaccineWB from './components/vaccine/district';
 import './App.css';
 
 function App(props) {
@@ -25,6 +25,7 @@ function App(props) {
             <Route path="/pincode/:pin" component={Pincode} />
             <Route path="/list" component={Search} />
             <Route path="/notification" component={Notification} />
+            <Route path="/vaccine/wb/:id" component={VaccineWB} />
         </Switch>
         <Menu />
       </Router>

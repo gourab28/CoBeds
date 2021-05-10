@@ -102,3 +102,14 @@ td > strong {
   font-weight: bold;
   text-transform: uppercase;
 }
+hr {
+  width: 100%;
+  min-width: 100%;
+}
+.slots {
+  border-radius: 10px;
+  font-size: 13px;
+  font-weight: bold;
+  padding: 13px;
+  box-shadow: 5px 10px;
+}
