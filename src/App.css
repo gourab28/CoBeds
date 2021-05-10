@@ -64,7 +64,7 @@
 .name_indi {
 }
 body {
-  background: #EDF2F4;
+  background: #FFEA83;
   overflow-x: hidden;
 }
 .district_card {
@@ -112,4 +112,9 @@ hr {
   font-weight: bold;
   padding: 13px;
   box-shadow: 5px 10px;
+}
+.cdate {
+  color: #2B2D42;
+  text-transform: uppercase;
+  font-weight: bold;
 }

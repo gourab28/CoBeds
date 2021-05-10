@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import {
   BrowserRouter as Router,
   Route,
@@ -13,12 +13,20 @@ import Pincode from './components/pin';
 import Notification from './components/notify';
 import VaccineWB from './components/vaccine/district';
 import './App.css';
-
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+ 
 function App(props) {
+  useEffect(() => {
+    getFAQs();
+    },[]);
+    
+    const getFAQs = () => toast.info("Data may be delayed or partial. Please verify with the hospital");
   return (
     <div className="App">
       <Router>
        <Navbar />
+       <ToastContainer />
         <Switch>
             <Route exact path="/" component={Home} />
             <Route path="/district/:district" component={District} />

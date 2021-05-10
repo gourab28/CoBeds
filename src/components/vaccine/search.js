@@ -6,6 +6,8 @@ import { makeStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
 import Moment from 'moment';
+import Divider from '@material-ui/core/Divider';
+import EventOutlinedIcon from '@material-ui/icons/EventOutlined';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -51,6 +53,10 @@ export default function Search(props) {
        onChange={event => setPincode(event.target.value)} />
       </Form.Group>
       <Form.Group>
+      <Form.Label className="mt-2">
+       <h3><EventOutlinedIcon /> Chose Date</h3>
+       <Divider />
+      </Form.Label>
       <Form.Control
       className="mt-3"
       placeholderText="Please select a date"

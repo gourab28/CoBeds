@@ -7,6 +7,10 @@ import Grid from '@material-ui/core/Grid';
 import { Container } from 'react-bootstrap';
 import {Form} from 'react-bootstrap';
 import Button from '@material-ui/core/Button';
+import Alert from '@material-ui/lab/Alert';
+import Box from '@material-ui/core/Box';
+import EventOutlinedIcon from '@material-ui/icons/EventOutlined';
+import Divider from '@material-ui/core/Divider';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -17,6 +21,7 @@ const useStyles = makeStyles((theme) => ({
     padding: theme.spacing(2),
     textAlign: 'center',
     color: theme.palette.text.secondary,
+    borderRadius: '10px'
   },
 }));
 export default function VaccineDistrict (props) {
@@ -26,21 +31,28 @@ export default function VaccineDistrict (props) {
    let stateid = props.match.params.id;
  const classes = useStyles();
  
+ 
   const getFAQs = () => {
     axios
       .get('https://cdn-api.co-vin.in/api/v2/appointment/sessions/public/calendarByDistrict?district_id='+stateid+'&date='+NewDate)
       .then((response) => {
+        //setIsLoaded(true);
         setFaq(response.data['centers']);
       })
       .catch((error) => {
         console.log(error);
       });
   };
-  
    return(
      <div className="home">
      <Container>
-      <Form.Group>
+     <Alert severity="info"> If Blank comes, you can change the date.</Alert>
+     
+      <Form.Group className="cdate">
+      <Form.Label className="mt-2">
+       <h3><EventOutlinedIcon /> Chose Date</h3>
+       <Divider />
+      </Form.Label>
       <Form.Control
       className="mt-3"
        size="lg" 
@@ -56,8 +68,9 @@ export default function VaccineDistrict (props) {
         Change Date
       </Button>
       <br/>
+      <Box color="text.primary" clone>
       <div className={classes.root}>
-       <Grid container spacing={3}>
+       <Grid borderColor="primary.main" container spacing={3}>
        <Grid item xs={6} sm={3}>
           <span class="badge bg-warning text-dark">{' '}</span><strong> Vaccination Date</strong>
         </Grid>
@@ -76,9 +89,13 @@ export default function VaccineDistrict (props) {
         </Grid>
        </Grid>
       </div>
+     </Box>
      <div className={classes.root}>
       <Grid container spacing={3}>
         {faq.map((faq, index) => {
+         //const AM = faq.sessions[0].slot.replace("AM", " AM");
+         const vslot = (faq.sessions[0].slots);
+         
           return (
           <Grid key={index} item xs={12}>
           <Paper className={classes.paper}>
@@ -102,7 +119,7 @@ export default function VaccineDistrict (props) {
           <i class="em em-syringe"></i>
           <span class="badge bg-success">
           {faq.sessions[0].available_capacity}</span></h4>
-          <p className="slots bg-info text-light">{faq.sessions[0].slots}</p>
+          <p className="slots bg-info text-light">{vslot}</p>
          </Paper>
         </Grid>
         );
@@ -111,5 +128,5 @@ export default function VaccineDistrict (props) {
     </div>
     </Container>
      </div>
-     )
+     );
 }
