@@ -3,7 +3,7 @@ import {Container} from 'react-bootstrap';
 //import Button from '@material-ui/core/Button';
 import VaccineDistrict from './vaccine/home';
 import VaccineSearch from './vaccine/search';
-import Test from './Test'
+//import Test from './Test'
 export default function Home(props) {
   
   //const SearchV = () => alert("System Disabled");
@@ -12,7 +12,6 @@ export default function Home(props) {
     <Container>
     <VaccineSearch />
      <VaccineDistrict />
-     <Test />
      </Container>
     
     </div>
