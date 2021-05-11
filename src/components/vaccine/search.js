@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import axios from 'axios';
 import {Form} from 'react-bootstrap';
 import Button from '@material-ui/core/Button';
@@ -23,10 +23,14 @@ const useStyles = makeStyles((theme) => ({
 
 export default function Search(props) {
   const classes = useStyles();
-  const [pincode, setPincode] = useState("");
+  const [pincode, setPincode] = useState("110001");
   const [faq, setFaq] = useState([]);
   const [date, setDate] = useState(new Date());
    const NewDate = Moment(date).format('DD-MM-YYYY');
+   
+   useEffect(() => {
+     SearchV();
+   });
   const SearchV = () => {
       axios
       .get('https://cdn-api.co-vin.in/api/v2/appointment/sessions/public/findByPin?pincode='+pincode+'&date='+NewDate)
@@ -49,7 +53,7 @@ export default function Search(props) {
        maxLength={6}
        type="number"
        required
-       placeholder="Enter Pin Code"
+       placeholder="110001"
        onChange={event => setPincode(event.target.value)} />
       </Form.Group>
       <Form.Group>

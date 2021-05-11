@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import Moment from 'moment';
 import axios from 'axios';
 import { makeStyles } from '@material-ui/core/styles';
@@ -30,19 +30,30 @@ export default function VaccineDistrict (props) {
   const [faq, setFaq] = useState([]);
    let stateid = props.match.params.id;
  const classes = useStyles();
+ const [isLoaded, setIsLoaded] = useState(false);
  
+ useEffect(() => {
+    getVdists();
+  }, );
  
-  const getFAQs = () => {
+  const getVdists = () => {
     axios
       .get('https://cdn-api.co-vin.in/api/v2/appointment/sessions/public/calendarByDistrict?district_id='+stateid+'&date='+NewDate)
       .then((response) => {
-        //setIsLoaded(true);
+        setIsLoaded(true);
         setFaq(response.data['centers']);
       })
       .catch((error) => {
         console.log(error);
       });
   };
+  if (!isLoaded) {
+    return <div className="home">
+           <div class="spinner-grow text-primary" role="status">
+  <span class="sr-only"></span>
+</div>
+           </div>;
+  } else {
    return(
      <div className="home">
      <Container>
@@ -63,7 +74,7 @@ export default function VaccineDistrict (props) {
         className="mt-3" 
         variant="outlined" 
         color="primary"
-        onClick={getFAQs}
+        onClick={getVdists}
         >
         Change Date
       </Button>
@@ -129,4 +140,5 @@ export default function VaccineDistrict (props) {
     </Container>
      </div>
      );
+  }
 }

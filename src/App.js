@@ -4,6 +4,7 @@ import {
   Route,
   Switch,
 } from "react-router-dom";
+
 import Home from './components/home';
 import Navbar from './components/navbar'
 import Menu from './components/menu'
@@ -21,12 +22,19 @@ function App(props) {
     getFAQs();
     },[]);
     
-    const getFAQs = () => toast.info("Data may be delayed or partial. Please verify with the hospital");
+    const getFAQs = () => toast.info('Data may be delayed or partial. Please verify with the hospital', {
+position: "bottom-center",
+autoClose: 5000,
+hideProgressBar: false,
+closeOnClick: true,
+pauseOnHover: true,
+draggable: true,
+progress: undefined,
+});;
   return (
     <div className="App">
       <Router>
        <Navbar />
-       <ToastContainer />
         <Switch>
             <Route exact path="/" component={Home} />
             <Route path="/district/:district" component={District} />
@@ -35,6 +43,7 @@ function App(props) {
             <Route path="/notification" component={Notification} />
             <Route path="/vaccine/wb/:id" component={VaccineWB} />
         </Switch>
+         <ToastContainer />
         <Menu />
       </Router>
     </div>
