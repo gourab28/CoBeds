@@ -23,7 +23,7 @@ function App(props) {
     },[]);
     
     const getFAQs = () => toast.info('Data may be delayed or partial. Please verify with the hospital', {
-position: "bottom-center",
+position: "top-right",
 autoClose: 5000,
 hideProgressBar: false,
 closeOnClick: true,
