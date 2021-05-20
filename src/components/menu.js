@@ -1,7 +1,7 @@
 import BottomNavigation from 'reactjs-bottom-navigation'
 import 'reactjs-bottom-navigation/dist/index.css'
 import HomeOutlined from '@material-ui/icons/HomeOutlined';
-import SearchOutlined from '@material-ui/icons/SearchOutlined';
+import HotelOutlinedIcon from '@material-ui/icons/HotelOutlined';
 import MenuOutlined from '@material-ui/icons/MenuOutlined';
 
 import BellOutlined from '@material-ui/icons/NotificationsActiveOutlined';
@@ -24,11 +24,11 @@ const history = useHistory();
     },
 
     {
-      title: 'Search',
+      title: 'Beds',
 
-      icon: <SearchOutlined style={{ fontSize: '18px' }} />,
+      icon: <HotelOutlinedIcon style={{ fontSize: '18px' }} />,
 
-      activeIcon: <SearchOutlined style={{ fontSize: '18px', color: '#fff' }} />,
+      activeIcon: <HotelOutlinedIcon style={{ fontSize: '18px', color: '#fff' }} />,
       
       onClick: () => history.push('/list')
     },

@@ -49,8 +49,8 @@ export default function VaccineDistrict (props) {
   };
   if (!isLoaded) {
     return <div className="home">
-           <div class="spinner-grow text-primary" role="status">
-  <span class="sr-only"></span>
+           <div className="spinner-grow text-primary" role="status">
+  <span className="sr-only"></span>
 </div>
            </div>;
   } else {
@@ -83,16 +83,16 @@ export default function VaccineDistrict (props) {
       <div className={classes.root}>
        <Grid borderColor="primary.main" container spacing={3}>
        <Grid item xs={6} sm={3}>
-          <span class="badge bg-warning text-dark">{' '}</span><strong> Vaccination Date</strong>
+          <span className="badge bg-warning text-dark">{' '}</span><strong> Vaccination Date</strong>
         </Grid>
         <Grid item xs={6} sm={3}>
           <p>
-          <span class="badge bg-danger">{' '}</span> <strong> Minimum Age </strong>
+          <span className="badge bg-danger">{' '}</span> <strong> Minimum Age </strong>
           </p>
         </Grid>
         <Grid item xs={6} sm={3}>
           <p>
-          <span class="badge bg-success">{' '}</span> <strong>Available Vaccination</strong>
+          <span className="badge bg-success">{' '}</span> <strong>Available Vaccination</strong>
           </p>
         </Grid>
         <Grid item xs={6} sm={3}>
@@ -110,25 +110,25 @@ export default function VaccineDistrict (props) {
           return (
           <Grid key={index} item xs={12}>
           <Paper className={classes.paper}>
-           <p><span class="badge bg-warning text-dark">
+           <p><span className="badge bg-warning text-dark">
            {faq.sessions[0].date}
            </span>
            </p>
           <>
-          <i class="em em-hospital"></i>
+          <i className="em em-hospital"></i>
           <h2 className="hos">{faq.name}</h2>
           </>
-          <p><i class="em em-round_pushpin"></i> {faq.address}</p>
+          <p><i className="em em-round_pushpin"></i> {faq.address}</p>
            <h5>
-           <i class="em em-mask"> </i> <span class="badge bg-danger"> {faq.sessions[0].min_age_limit}</span>
+           <i className="em em-mask"> </i> <span className="badge bg-danger"> {faq.sessions[0].min_age_limit}</span>
           </h5>
           <h3>
-          <span class="badge bg-light text-dark">
+          <span className="badge bg-light text-dark">
           {faq.sessions[0].vaccine}</span>
           </h3>
           <h4>
-          <i class="em em-syringe"></i>
-          <span class="badge bg-success">
+          <i className="em em-syringe"></i>
+          <span className="badge bg-success">
           {faq.sessions[0].available_capacity}</span></h4>
           <p className="slots bg-info text-light">{vslot}</p>
          </Paper>

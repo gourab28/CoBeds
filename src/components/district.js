@@ -48,8 +48,8 @@ const [error, setError] = useState(null);
     return <div>Error: {error.message}</div>;
   } else if (!isLoaded) {
     return <div className="home">
-           <div class="spinner-grow text-info" role="status">
-            <span class="sr-only"></span>
+           <div className="spinner-grow text-info" role="status">
+            <span className="sr-only"></span>
             </div>
            </div>;
   } else {
@@ -58,15 +58,15 @@ const [error, setError] = useState(null);
       <Container>  
        <Row>
          <Col>
-          <h1 className="district_name"><i class="em em-mask"></i> {District}</h1>
+          <h1 className="district_name"><i className="em em-mask"></i> {District}</h1>
          </Col>
          <Col>
          <div className="name_indi">
           <h6>
-            <span class="badge bg-warning">{''} </span> Remaining Resources 
+            <span className="badge bg-warning">{''} </span> Remaining Resources 
           </h6>
           <h6>
-          <span class="badge bg-success">{''} </span> Total Allotted Resources
+          <span className="badge bg-success">{''} </span> Total Allotted Resources
           </h6>
          </div>
          </Col>
@@ -91,9 +91,11 @@ const [error, setError] = useState(null);
         //const timem = moment.unix(unix);
         // const update = timem.format('LT');
         const timeSince = timeago(item.last_updated_on - 60000 * 10);
-        const update = timeSince.split("51 years ago").join("unknown")
+        const update = timeSince.split("51 years ago").join("unknown");
+        let color = item.available_beds_allocated_to_covid < 10 ? 'table-danger' : (item.available_beds_allocated_to_covid <= 30 ? 'table-warning' : 'table-success');
+
         return(
-        <tr>
+        <tr className={color}>
          <td>
           <strong>{item.hospital_name}</strong>
            <br/>
@@ -101,36 +103,36 @@ const [error, setError] = useState(null);
           </td>
           <td>
            <h1>
-             <span class="badge bg-warning">
+             <span className="badge bg-warning">
              {item.available_beds_allocated_to_covid}
              </span>
             </h1>
           <h1>
-          <span class="badge bg-success">
+          <span className="badge bg-success">
           {item.total_beds_allocated_to_covid}
           </span>
           </h1>
           </td>
           <td>
           <h1>
-             <span class="badge bg-warning">
+             <span className="badge bg-warning">
              {item.available_beds_with_oxygen}
              </span>
             </h1>
           <h1>
-          <span class="badge bg-success">
+          <span className="badge bg-success">
           {item.total_beds_with_oxygen}
           </span>
           </h1>
           </td>
           <td>
           <h1>
-             <span class="badge bg-warning">
+             <span className="badge bg-warning">
              {item.available_icu_beds_without_ventilator}
              </span>
             </h1>
           <h1>
-          <span class="badge bg-success">
+          <span className="badge bg-success">
           {item.total_icu_beds_without_ventilator}
           </span>
           </h1>

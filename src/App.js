@@ -1,11 +1,11 @@
-import React, {useEffect} from 'react';
+import React from 'react';
 import {
   BrowserRouter as Router,
   Route,
   Switch,
 } from "react-router-dom";
 
-import Home from './components/home';
+import Home from './components/main';
 import Navbar from './components/navbar'
 import Menu from './components/menu'
 import District from './components/district';
@@ -13,24 +13,12 @@ import Search from './components/list';
 import Pincode from './components/pin';
 import Notification from './components/notify';
 import VaccineWB from './components/vaccine/district';
+import VaccineHome from './components/vaccine/home';
 import './App.css';
-import { ToastContainer, toast } from 'react-toastify';
+//portrt { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
  
 function App(props) {
-  useEffect(() => {
-    getFAQs();
-    },[]);
-    
-    const getFAQs = () => toast.info('Data may be delayed or partial. Please verify with the hospital', {
-position: "top-right",
-autoClose: 5000,
-hideProgressBar: false,
-closeOnClick: true,
-pauseOnHover: true,
-draggable: true,
-progress: undefined,
-});;
   return (
     <div className="App">
       <Router>
@@ -42,8 +30,9 @@ progress: undefined,
             <Route path="/list" component={Search} />
             <Route path="/notification" component={Notification} />
             <Route path="/vaccine/wb/:id" component={VaccineWB} />
+            <Route path="/vaccine" component={VaccineHome} />
         </Switch>
-         <ToastContainer />
+         
         <Menu />
       </Router>
     </div>

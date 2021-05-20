@@ -28,8 +28,8 @@ function FAQ(props) {
   };
   if (!isLoaded) {
     return <div className="home">
-           <div class="spinner-grow text-info" role="status">
-            <span class="sr-only"></span>
+           <div className="spinner-grow text-info" role="status">
+            <span className="sr-only"></span>
             </div>
            </div>;
   } else {
@@ -48,13 +48,13 @@ function FAQ(props) {
           <tr key={index}>
             <td>
             <h4>
-               <span class="">{item.district_name}</span>
+               <span className="">{item.district_name}</span>
                </h4>
             </td>
             <td>
              <h3>
              <Link to={`../vaccine/wb/${item.district_id}`}>
-               <span class="badge bg-success">Click</span>
+               <span className="badge bg-success">Click</span>
                </Link>
                </h3>
             </td>

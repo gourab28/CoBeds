@@ -44,7 +44,7 @@ export default function Search(props) {
   return(
     <div className="home">
     <div className="vaccine">
-       <h3><i class="em em-syringe"></i>  Nearby Vaccine Center</h3>
+       <h3><i className="em em-syringe"></i>  Nearby Vaccine Center</h3>
     </div>
     <Form>
     <Form.Group>
@@ -92,14 +92,14 @@ export default function Search(props) {
           <p>{faq.address}</p>
           <hr/>
           <h4>
-           <span class="badge badge-pill bg-primary">{faq.vaccine}</span>
+           <span className="badge badge-pill bg-primary">{faq.vaccine}</span>
           </h4>
           <h5>
-          Available <span class="badge badge-pill bg-success"> {faq.available_capacity}
+          Available <span className="badge badge-pill bg-success"> {faq.available_capacity}
           </span>
           </h5>
           <p>
-          <span class="badge badge-pill bg-danger">Min Age {faq.min_age_limit}</span> <span class="badge badge-pill bg-info">{faq.fee_type}</span>
+          <span className="badge badge-pill bg-danger">Min Age {faq.min_age_limit}</span> <span className="badge badge-pill bg-info">{faq.fee_type}</span>
           </p>
           </Paper>
         </Grid>

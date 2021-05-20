@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
 .App {
   text-align: center;
 }
@@ -117,4 +119,19 @@ hr {
   color: #2B2D42;
   text-transform: uppercase;
   font-weight: bold;
+}
+
+.shadow-lg {
+  background-color: #EDF2F4;
+}
+.wb_ncov {
+  font-size: calc(14px + 2vmin);
+  text-transform: uppercase;
+  font-weight: bold;
+  font-family: 'Roboto', sans-serif;
+}
+.card {
+  background-color: rgba(245, 245, 245, 1);
+  margin-top: 13px;
+  margin-bottom: 13px;
 }

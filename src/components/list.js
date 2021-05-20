@@ -46,8 +46,8 @@ function FAQ(props) {
              <Helmet>
                <title>CoBeds West Bengal - Bed Availability Tracker </title>
              </Helmet>
-            <div class="spinner-grow text-info" role="status">
-            <span class="sr-only"></span>
+            <div className="spinner-grow text-info" role="status">
+            <span className="sr-only"></span>
             </div>
            </div>;
   } else {
